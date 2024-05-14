@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace IMS
 {
@@ -14,9 +16,24 @@ namespace IMS
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            bool countone = false;
+            using (Mutex mtex = new Mutex(true, "MyRunningApp", out countone))
+            {
+                if (countone)
+                {
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new Form1());
+
+                }
+                else
+                {
+                    MessageBox.Show("Application is already running.");
+
+                }
+            }
+            
         }
     }
 }

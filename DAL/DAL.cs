@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using System.Data.Common;
 
 namespace DataAccessLayer
 {
@@ -123,7 +125,6 @@ namespace DataAccessLayer
         public SqlDataReader GetDataReader()
         {
             return DbCommand.ExecuteReader();
-
         }
 
         public int ExecuteQuery()
@@ -163,6 +164,9 @@ namespace DataAccessLayer
             get { return this.Connection; }
         }
 
+        public SqlDataReader ExecuteReader()
+        {
+            return DbCommand.ExecuteReader();
+        }
     }
-           
 }

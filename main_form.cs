@@ -1,13 +1,18 @@
 ﻿using System;
-
 using System.Windows.Forms;
 
 
+//if wrong details are inputted in server connection then???
+//why is registry manager and connectionsetiinges here here?? - in ims
+//remove commented methods from different forms
+//cjeck all forms for comments
+//check if admin stored procedures for viewing are okay or not
+
 namespace IMS
 {
-    public partial class Form1 : Form
+    public partial class main_form : Form
     {
-        public Form1()
+        public main_form()
         {
             InitializeComponent();
         }
@@ -23,8 +28,8 @@ namespace IMS
             {
                 txtServerName.Text = serverName;
                 txtDbName.Text = databaseName;
-               txtDbUserId.Text = id;
-               txtDbPwd.Text = password;
+                txtDbUserId.Text = id;
+                txtDbPwd.Text = password;
             }
         }
 
@@ -34,6 +39,10 @@ namespace IMS
             csObj.UpdateConnectionString(txtServerName.Text, txtDbName.Text, txtDbUserId.Text, txtDbPwd.Text);
             RegistryManager regObj = new RegistryManager();
             regObj.WriteRegistry(txtServerName.Text, txtDbName.Text, txtDbUserId.Text, txtDbPwd.Text);
+
+            Form new_form = new welcome_form();
+            new_form.Show();
+            this.Hide();
         }
     }
 }

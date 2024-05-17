@@ -5,8 +5,7 @@
 INSERT INTO Inventory_Management_System.dbo.store 
 	VALUES('General Store','Gulshan','02121212121'),('General Store','Nazimabad','031313131');
 
-INSERT INTO Inventory_Management_System.dbo.admin VALUES(65215,'Sundus Ishaque','12345',1),(65098,'Areeba Ahmed','asd123',1),
-	(12678,'Mahnoor Asim','1212',2),(64967,'Aiman Adil','1313',2);
+INSERT INTO Inventory_Management_System.dbo.admin VALUES(65215,'Sundus Ishaque','12345',1),(65098,'Areeba Ahmed','asd123',1);
 
 INSERT INTO Inventory_Management_System.dbo.employee VALUES('Shakeel','021212121','Clerk', 12500, 1),
 	('Anas','07878787','Manager', 78000, 1),('Fazal','187518752','Clerk', 56050, 1),

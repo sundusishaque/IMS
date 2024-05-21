@@ -184,17 +184,41 @@
       <DependentUpon>admin_menu.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionSettings.cs" />
+    <Compile Include="customer_cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customer_cart.Designer.cs">
+      <DependentUpon>customer_cart.cs</DependentUpon>
+    </Compile>
     <Compile Include="customer_login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="customer_login.Designer.cs">
       <DependentUpon>customer_login.cs</DependentUpon>
     </Compile>
+    <Compile Include="customer_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customer_menu.Designer.cs">
+      <DependentUpon>customer_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customer_order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customer_order.Designer.cs">
+      <DependentUpon>customer_order.cs</DependentUpon>
+    </Compile>
     <Compile Include="customer_registration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="customer_registration.Designer.cs">
       <DependentUpon>customer_registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customer_account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customer_account.Designer.cs">
+      <DependentUpon>customer_account.cs</DependentUpon>
     </Compile>
     <Compile Include="main_form.cs">
       <SubType>Form</SubType>
@@ -226,8 +250,20 @@
     <EmbeddedResource Include="admin_menu.resx">
       <DependentUpon>admin_menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="customer_account.resx">
+      <DependentUpon>customer_account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customer_cart.resx">
+      <DependentUpon>customer_cart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="customer_login.resx">
       <DependentUpon>customer_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customer_menu.resx">
+      <DependentUpon>customer_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customer_order.resx">
+      <DependentUpon>customer_order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customer_registration.resx">
       <DependentUpon>customer_registration.cs</DependentUpon>

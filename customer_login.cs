@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace IMS
 {
@@ -38,9 +39,14 @@ namespace IMS
                 MessageBox.Show("Please fill the required details.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                //cUSTOMER admin = new Admin();
-                //admin.CheckLogin(Convert.ToInt32(txtUserId.Text), txtUserPassword.Text);
-                //this.Hide();
+
+                BLL_Customer customer = new BLL_Customer();
+                if (customer.CheckIfExists(Convert.ToInt32(txtUserId.Text), txtUserPassword.Text))
+                {
+                    Form customermenu = new customer_menu();
+                    customermenu.Show();
+                    this.Hide();
+                }
             }
             txtUserId.Clear();
             txtUserPassword.Clear();

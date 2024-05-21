@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL_Admin.cs" />
+    <Compile Include="BLL_Customer.cs" />
     <Compile Include="BLL_IProduct.cs" />
     <Compile Include="LoginReadAndUpdation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

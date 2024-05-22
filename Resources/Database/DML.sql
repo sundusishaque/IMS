@@ -1,6 +1,5 @@
 <<<<<<< HEAD:Resources/Database/DML.sql
 -- runs only once to populate the entire 'inventory' database
--- includes DML(insertion)
 
 -- populating the database
 INSERT INTO IMS.dbo.store 

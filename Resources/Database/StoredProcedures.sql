@@ -238,7 +238,7 @@ CREATE PROCEDURE [dbo].[spViewInventoryByName]
 AS
 BEGIN
 	SET NOCOUNT ON;
-	SELECT id AS ID, name AS Name, quantity AS Quantity, price AS Price, category AS Category FROM customer WHERE store_id = @store_id AND name LIKE '%' +@name+ '%';
+	SELECT id AS ID, name AS Name, quantity AS Quantity, price AS Price, category AS Category FROM inventory WHERE store_id = @store_id AND name LIKE '%' +@name+ '%';
 END
 GO
 
@@ -248,7 +248,7 @@ CREATE PROCEDURE [dbo].[spViewInventoryByCategory]
 AS
 BEGIN
 	SET NOCOUNT ON;
-	SELECT id AS ID, name AS Name, quantity AS Quantity, price AS Price, category AS Category FROM customer WHERE store_id = @store_id AND category = @category;
+	SELECT id AS ID, name AS Name, quantity AS Quantity, price AS Price, category AS Category FROM inventory WHERE store_id = @store_id AND category = @category;
 END
 GO
 

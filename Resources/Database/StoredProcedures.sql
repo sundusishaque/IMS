@@ -79,7 +79,6 @@ END
 GO
 
 CREATE PROCEDURE [dbo].[spViewEmployeesAsc] 
-	@name VARCHAR(50),
 	@store_id INT
 AS
 BEGIN
@@ -89,7 +88,6 @@ END
 GO
 
 CREATE PROCEDURE [dbo].[spViewEmployeesDesc] 
-	@name VARCHAR(50),
 	@store_id INT
 AS
 BEGIN
@@ -122,8 +120,8 @@ END
 GO
 
 CREATE PROCEDURE [dbo].[spUpdateEmployee] 
-    @id INT,
-    @name VARCHAR(50),
+    	@id INT,
+    	@name VARCHAR(50),
 	@contact VARCHAR(50),
 	@position VARCHAR(50),
 	@salary FLOAT,
@@ -190,7 +188,6 @@ END
 GO
 
 CREATE PROCEDURE [dbo].[spViewCustomersAsc] 
-	@name VARCHAR(50),
 	@store_id INT
 AS
 BEGIN
@@ -200,7 +197,6 @@ END
 GO
 
 CREATE PROCEDURE [dbo].[spViewCustomersDesc] 
-	@name VARCHAR(50),
 	@store_id INT
 AS
 BEGIN
@@ -533,7 +529,7 @@ END
 GO
 
 -- Stored procedure to get total price
-CREATE PROCEDURE [dbo].[ spGetTotalPrice]
+CREATE PROCEDURE [dbo].[spGetTotalPrice]
     @OrderId INT,
     @CustomerId INT
 AS

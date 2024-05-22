@@ -145,23 +145,7 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE [dbo].[spViewEmployeesByNameAsc] 
-	@store_id INT
-AS
-BEGIN
-	SET NOCOUNT ON;
-	SELECT id AS ID, name AS Name, contact AS Contact, position AS Position, salary AS Salary FROM employee WHERE store_id = @store_id ORDER BY name ASC;
-END
-GO
 
-CREATE PROCEDURE [dbo].[spViewEmployeesByNameDesc] 
-	@store_id INT
-AS
-BEGIN
-	SET NOCOUNT ON;
-	SELECT id AS ID, name AS Name, contact AS Contact, position AS Position, salary AS Salary FROM employee WHERE store_id = @store_id ORDER BY name DESC;
-END
-GO
 
 
 
@@ -292,6 +276,24 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 	SELECT id AS ID, name AS Name, quantity AS Quantity, price AS Price, category AS Category FROM inventory WHERE store_id = @store_id ORDER BY price DESC;
+END
+GO
+
+CREATE PROCEDURE [dbo].[spViewInventoryByNameAsc] 
+	@store_id INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT id AS ID, name AS Name, quantity AS Quantity, price AS Price, category AS Category FROM inventory WHERE store_id = @store_id ORDER BY name ASC;
+END
+GO
+
+CREATE PROCEDURE [dbo].[spViewInventoryByNameDesc] 
+	@store_id INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT id AS ID, name AS Name, quantity AS Quantity, price AS Price, category AS Category FROM inventory WHERE store_id = @store_id ORDER BY name ASC;
 END
 GO
 

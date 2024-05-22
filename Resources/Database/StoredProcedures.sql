@@ -270,24 +270,6 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE [dbo].[spViewInventoryAsc] 
-	@store_id INT
-AS
-BEGIN
-	SET NOCOUNT ON;
-	SELECT id AS ID, name AS Name, quantity AS Quantity, price AS Price, category AS Category FROM inventory WHERE store_id = @store_id ORDER BY name ASC;
-END
-GO
-
-CREATE PROCEDURE [dbo].[spViewInventoryDesc] 
-	@store_id INT
-AS
-BEGIN
-	SET NOCOUNT ON;
-	SELECT id AS ID, name AS Name, quantity AS Quantity, price AS Price, category AS Category FROM inventory WHERE store_id = @store_id ORDER BY name DESC;
-END
-GO
-
 CREATE PROCEDURE [dbo].[spInsertInventory] 
 	@name VARCHAR(50),
 	@quantity INT,
@@ -345,6 +327,7 @@ BEGIN
 	SELECT order_id AS [Order ID #], total_products AS [Total Products], amount AS [Total Amount], date AS Dated, customer_id AS [Customer's ID] FROM orders WHERE store_id = @store_id
 END
 GO
+
 
 CREATE PROCEDURE [dbo].[spViewOrderHistoryById] 
 	@id INT,

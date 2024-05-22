@@ -185,7 +185,7 @@
             this.cmbFilter.FormattingEnabled = true;
             this.cmbFilter.Location = new System.Drawing.Point(84, 11);
             this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(197, 31);
+            this.cmbFilter.Size = new System.Drawing.Size(197, 22);
             this.cmbFilter.TabIndex = 13;
             this.cmbFilter.SelectedIndexChanged += new System.EventHandler(this.cmbFilter_SelectedIndexChanged);
             // 
@@ -197,7 +197,7 @@
             this.lblFilter.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblFilter.Location = new System.Drawing.Point(3, 11);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(75, 27);
+            this.lblFilter.Size = new System.Drawing.Size(53, 18);
             this.lblFilter.TabIndex = 11;
             this.lblFilter.Text = "Filter:";
             // 
@@ -237,7 +237,7 @@
             // 
             this.txtSearch.Location = new System.Drawing.Point(98, 15);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(206, 30);
+            this.txtSearch.Size = new System.Drawing.Size(206, 23);
             this.txtSearch.TabIndex = 1;
             // 
             // lblSearch
@@ -248,7 +248,7 @@
             this.lblSearch.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblSearch.Location = new System.Drawing.Point(3, 18);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(89, 27);
+            this.lblSearch.Size = new System.Drawing.Size(62, 18);
             this.lblSearch.TabIndex = 12;
             this.lblSearch.Text = "Search:";
             // 
@@ -264,14 +264,16 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.Color.Cornsilk;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(3, 81);
+            this.dataGridView.Location = new System.Drawing.Point(47, 116);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 62;
             this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(701, 365);
-            this.dataGridView.TabIndex = 1;
+            this.dataGridView.Size = new System.Drawing.Size(612, 217);
+            this.dataGridView.TabIndex = 2;
             // 
             // bttnEdit
             // 
@@ -289,7 +291,7 @@
             // 
             // admin_menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(978, 650);
@@ -298,7 +300,7 @@
             this.Controls.Add(this.pnlFilter);
             this.Controls.Add(this.pnlDataView);
             this.Font = new System.Drawing.Font("Baskerville Old Face", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "admin_menu";
@@ -337,7 +339,7 @@
         private System.Windows.Forms.PictureBox picSortName;
         private System.Windows.Forms.PictureBox picSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button bttnEdit;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }

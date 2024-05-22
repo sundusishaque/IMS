@@ -33,8 +33,7 @@ namespace BLL
                 dataLayerObj.LoadSpParameters(addCustomerQuery, name, contact, password, storeId);
                 int checkAddCustomer = dataLayerObj.ExecuteQuery();
 
-                if (checkAddCustomer > 0)
-                {
+                
                     string getCustomerIdQuery = "spGetCustomerIdByNameContactPassword";
                     dataLayerObj.LoadSpParameters(getCustomerIdQuery, name, contact, password);
                     SqlDataReader reader = dataLayerObj.GetDataReader();
@@ -59,13 +58,8 @@ namespace BLL
                         dataLayerObj.CloseConnection();
                         return false;
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Failed to add customer.", "Registration Incomplete");
-                    dataLayerObj.CloseConnection();
-                    return false;
-                }
+                
+                
             }
             catch (Exception ex)
             {
@@ -129,15 +123,7 @@ namespace BLL
             }
             return false;
         }
-        static protected DataTable ViewDataOnGrid(string spName, params object[] parameters)
-        {
-            DAL dataLayerObj = new DAL();
-            dataLayerObj.OpenConnection();
-            dataLayerObj.LoadSpParameters(spName, parameters);
-            DataTable dataTable = dataLayerObj.GetDataTable();
-            dataLayerObj.CloseConnection();
-            return dataTable;
-        }
+       
 
 
 
@@ -156,11 +142,11 @@ namespace BLL
         }
         public void ViewInventoryByName(string name, DataGridView gridView)
         {
-            gridView.DataSource = ViewDataOnGrid("spViewInventoryByName", StoreIDofUser, name);
+            gridView.DataSource = ViewDataOnGrid("spViewInventoryByName", name ,StoreIDofUser);
         }
         public void ViewInventoryByCategory(string category, DataGridView gridView)
         {
-            gridView.DataSource = ViewDataOnGrid("spViewInventoryByCategory", StoreIDofUser, category);
+            gridView.DataSource = ViewDataOnGrid("spViewInventoryByCategory", category, StoreIDofUser);
         }
         public void SortInventoryByPrice(string sortBy, DataGridView gridView)
         {
@@ -174,9 +160,9 @@ namespace BLL
         {
 
             if (sortBy == "asc")
-                gridView.DataSource = ViewDataOnGrid("spViewInventoryAsc", StoreIDofUser);
+                gridView.DataSource = ViewDataOnGrid("spViewInventoryByNameAsc", StoreIDofUser);
             else
-                gridView.DataSource = ViewDataOnGrid("spViewInventoryDesc", StoreIDofUser);
+                gridView.DataSource = ViewDataOnGrid("spViewInventoryByNameDesc", StoreIDofUser);
         }
         public void DeleteCustomer(string password)
         {
@@ -218,7 +204,7 @@ namespace BLL
 
         public void ViewOrderDetailsById(int id, DataGridView gridView)
         {
-            gridView.DataSource = ViewDataOnGrid("spViewOrderDetailsById", id, StoreIDofUser, IDofUser);
+            gridView.DataSource = ViewDataOnGrid("spViewOrderDetailsById", IDofUser, StoreIDofUser,id);
         }
 
         public void ViewOrdersHistoryById(int id, DataGridView gridView)
@@ -268,7 +254,7 @@ namespace BLL
                 }
 
                 reader.Close();
-                dataLayerObj.CloseConnection();
+                //dataLayerObj.CloseConnection();
 
                 if (!string.IsNullOrEmpty(productName) && productPrice > 0)
                 {
@@ -287,20 +273,21 @@ namespace BLL
                     }
 
                     // Add product to cart
-                    dataLayerObj.OpenConnection();
+                    //dataLayerObj.OpenConnection();
                     string addToCartQuery = "spAddToCart";
                     dataLayerObj.LoadSpParameters(addToCartQuery, productId, productName, productQty, totalPrice, IDofOrder, IDofUser, StoreIDofUser);
                     int rowsAffected = dataLayerObj.ExecuteQuery();
                     dataLayerObj.CloseConnection();
 
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show($"The product, ID: {productId}, has been added to your cart.", "Product Added");
-                    }
-                    else
-                    {
-                        MessageBox.Show("The product could not be added to your cart. Please try again.", "Order Incomplete");
-                    }
+                    //if (rowsAffected > 0)
+                    //{
+                    //    MessageBox.Show($"The product, ID: {productId}, has been added to your cart.", "Product Added");
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("The product could not be added to your cart. Please try again.", "Order Incomplete");
+                    //}
+                    MessageBox.Show($"The product, ID: {productId}, has been added to your cart.", "Product Added");
                 }
                 else
                 {
@@ -324,6 +311,7 @@ namespace BLL
                 string checkOrderIdQuery = "spCheckOrderIdExists";
                 dataLayerObj.LoadSpParameters(checkOrderIdQuery, orderId);
                 object result = dataLayerObj.ExecuteValue();
+                dataLayerObj.UnLoadSpParameters();
                 dataLayerObj.CloseConnection();
 
                 return result != null && Convert.ToInt32(result) > 0;
@@ -336,7 +324,10 @@ namespace BLL
             }
         }
 
-
+        public int getorderId()
+        {
+            return IDofOrder;
+        }
 
 
 
@@ -354,7 +345,7 @@ namespace BLL
                 string getTotalQttyQuery = "spGetTotalQuantity";
                 dataLayerObj.LoadSpParameters(getTotalQttyQuery, IDofOrder, IDofUser);
                 object totalQtyResult = dataLayerObj.ExecuteValue();
-                dataLayerObj.CloseConnection();
+                //dataLayerObj.CloseConnection();
                 if (totalQtyResult == null)
                 {
                     throw new Exception("Failed to retrieve total quantity.");
@@ -362,11 +353,11 @@ namespace BLL
                 int totalProducts = Convert.ToInt32(totalQtyResult);
 
                 // Get total price
-                dataLayerObj.OpenConnection();
+                //dataLayerObj.OpenConnection();
                 string getTotalPriceQuery = "spGetTotalPrice";
                 dataLayerObj.LoadSpParameters(getTotalPriceQuery, IDofOrder, IDofUser);
                 object totalPriceResult = dataLayerObj.ExecuteValue();
-                dataLayerObj.CloseConnection();
+                //dataLayerObj.CloseConnection();
                 if (totalPriceResult == null)
                 {
                     throw new Exception("Failed to retrieve total price.");
@@ -374,7 +365,7 @@ namespace BLL
                 double totalAmount = Convert.ToDouble(totalPriceResult);
 
                 // Insert order
-                dataLayerObj.OpenConnection();
+                //dataLayerObj.OpenConnection();
                 string insertInOrdersQuery = "spInsertOrder";
                 dataLayerObj.LoadSpParameters(insertInOrdersQuery, IDofOrder, totalProducts, totalAmount, IDofUser, StoreIDofUser);
                 int checkInsertion = dataLayerObj.ExecuteQuery();

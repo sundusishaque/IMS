@@ -19,6 +19,7 @@ namespace IMS
         public admin_login()
         {
             InitializeComponent();
+            txtUserPassword.UseSystemPasswordChar = true;
         }
 
         private void bttnGoBack_Click(object sender, EventArgs e)

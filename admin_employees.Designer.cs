@@ -37,12 +37,12 @@
             this.bttnUpdate = new System.Windows.Forms.Button();
             this.bttnDelete = new System.Windows.Forms.Button();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.bttnGoBack = new System.Windows.Forms.Button();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.employeeDataGridView = new System.Windows.Forms.DataGridView();
-            this.bttnGoBack = new System.Windows.Forms.Button();
             this.pnlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.lblName.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblName.Location = new System.Drawing.Point(86, 13);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(81, 27);
+            this.lblName.Size = new System.Drawing.Size(56, 18);
             this.lblName.TabIndex = 14;
             this.lblName.Text = "Name:";
             // 
@@ -81,7 +81,7 @@
             this.lblSalary.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblSalary.Location = new System.Drawing.Point(552, 79);
             this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(81, 27);
+            this.lblSalary.Size = new System.Drawing.Size(58, 18);
             this.lblSalary.TabIndex = 15;
             this.lblSalary.Text = "Salary:";
             // 
@@ -93,7 +93,7 @@
             this.lblPosition.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblPosition.Location = new System.Drawing.Point(530, 10);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(103, 27);
+            this.lblPosition.Size = new System.Drawing.Size(72, 18);
             this.lblPosition.TabIndex = 16;
             this.lblPosition.Text = "Position:";
             // 
@@ -105,7 +105,7 @@
             this.lblContact.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblContact.Location = new System.Drawing.Point(69, 82);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(98, 27);
+            this.lblContact.Size = new System.Drawing.Size(69, 18);
             this.lblContact.TabIndex = 17;
             this.lblContact.Text = "Contact:";
             // 
@@ -156,49 +156,6 @@
             this.pnlContainer.Size = new System.Drawing.Size(909, 230);
             this.pnlContainer.TabIndex = 20;
             // 
-            // txtSalary
-            // 
-            this.txtSalary.Location = new System.Drawing.Point(639, 79);
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(175, 30);
-            this.txtSalary.TabIndex = 21;
-            // 
-            // cmbPosition
-            // 
-            this.cmbPosition.FormattingEnabled = true;
-            this.cmbPosition.Location = new System.Drawing.Point(639, 10);
-            this.cmbPosition.Name = "cmbPosition";
-            this.cmbPosition.Size = new System.Drawing.Size(175, 31);
-            this.cmbPosition.TabIndex = 25;
-            // 
-            // txtContact
-            // 
-            this.txtContact.Location = new System.Drawing.Point(173, 79);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(176, 30);
-            this.txtContact.TabIndex = 23;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(173, 13);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(176, 30);
-            this.txtName.TabIndex = 24;
-            // 
-            // employeeDataGridView
-            // 
-            this.employeeDataGridView.BackgroundColor = System.Drawing.Color.Cornsilk;
-            this.employeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.employeeDataGridView.Location = new System.Drawing.Point(0, 237);
-            this.employeeDataGridView.Name = "employeeDataGridView";
-            this.employeeDataGridView.RowHeadersWidth = 62;
-            this.employeeDataGridView.RowTemplate.Height = 28;
-            this.employeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeDataGridView.Size = new System.Drawing.Size(978, 449);
-            this.employeeDataGridView.TabIndex = 26;
-            this.employeeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDataGridView_CellClick);
-            // 
             // bttnGoBack
             // 
             this.bttnGoBack.BackColor = System.Drawing.Color.Goldenrod;
@@ -213,9 +170,57 @@
             this.bttnGoBack.UseVisualStyleBackColor = false;
             this.bttnGoBack.Click += new System.EventHandler(this.bttnGoBack_Click);
             // 
+            // txtSalary
+            // 
+            this.txtSalary.Location = new System.Drawing.Point(639, 79);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(175, 23);
+            this.txtSalary.TabIndex = 21;
+            // 
+            // cmbPosition
+            // 
+            this.cmbPosition.FormattingEnabled = true;
+            this.cmbPosition.Items.AddRange(new object[] {
+            "Manager",
+            "Clerk"});
+            this.cmbPosition.Location = new System.Drawing.Point(639, 10);
+            this.cmbPosition.Name = "cmbPosition";
+            this.cmbPosition.Size = new System.Drawing.Size(175, 22);
+            this.cmbPosition.TabIndex = 25;
+            // 
+            // txtContact
+            // 
+            this.txtContact.Location = new System.Drawing.Point(173, 79);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(176, 23);
+            this.txtContact.TabIndex = 23;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(173, 13);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(176, 23);
+            this.txtName.TabIndex = 24;
+            // 
+            // employeeDataGridView
+            // 
+            this.employeeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.employeeDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.employeeDataGridView.BackgroundColor = System.Drawing.Color.Cornsilk;
+            this.employeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.employeeDataGridView.Location = new System.Drawing.Point(0, 237);
+            this.employeeDataGridView.Name = "employeeDataGridView";
+            this.employeeDataGridView.RowHeadersWidth = 62;
+            this.employeeDataGridView.RowTemplate.Height = 28;
+            this.employeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.employeeDataGridView.Size = new System.Drawing.Size(978, 449);
+            this.employeeDataGridView.TabIndex = 26;
+            this.employeeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDataGridView_CellClick);
+            // 
             // admin_employees
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(978, 686);

@@ -36,10 +36,13 @@ namespace IMS
                 admin.UpdatePassword(txtOldPassword.Text, txtNewPassword.Text);
                 //updation successful so shoe message and take back to main menu
                 this.Hide();
+                Form goBack = new admin_menu();
+                goBack.Show();
             }
 
             txtOldPassword.Clear();
             txtNewPassword.Clear();
+          
         }
     }
 }

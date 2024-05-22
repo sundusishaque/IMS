@@ -37,12 +37,12 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.bttnGoBack = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.inventoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.bttnGoBack = new System.Windows.Forms.Button();
             this.pnlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -97,7 +97,7 @@
             this.lblName.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblName.Location = new System.Drawing.Point(86, 13);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(81, 27);
+            this.lblName.Size = new System.Drawing.Size(56, 18);
             this.lblName.TabIndex = 14;
             this.lblName.Text = "Name:";
             // 
@@ -109,7 +109,7 @@
             this.lblPrice.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblPrice.Location = new System.Drawing.Point(567, 17);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(73, 27);
+            this.lblPrice.Size = new System.Drawing.Size(51, 18);
             this.lblPrice.TabIndex = 15;
             this.lblPrice.Text = "Price:";
             // 
@@ -121,7 +121,7 @@
             this.lblQuantity.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblQuantity.Location = new System.Drawing.Point(59, 82);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(108, 27);
+            this.lblQuantity.Size = new System.Drawing.Size(76, 18);
             this.lblQuantity.TabIndex = 17;
             this.lblQuantity.Text = "Quantity:";
             // 
@@ -133,7 +133,7 @@
             this.lblCategory.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblCategory.Location = new System.Drawing.Point(530, 82);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(110, 27);
+            this.lblCategory.Size = new System.Drawing.Size(78, 18);
             this.lblCategory.TabIndex = 16;
             this.lblCategory.Text = "Category:";
             // 
@@ -156,49 +156,6 @@
             this.pnlContainer.Size = new System.Drawing.Size(909, 230);
             this.pnlContainer.TabIndex = 27;
             // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(652, 17);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(175, 30);
-            this.txtPrice.TabIndex = 21;
-            // 
-            // cmbCategory
-            // 
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(652, 82);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(175, 31);
-            this.cmbCategory.TabIndex = 25;
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Location = new System.Drawing.Point(173, 79);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(176, 30);
-            this.txtQuantity.TabIndex = 23;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(173, 13);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(176, 30);
-            this.txtName.TabIndex = 24;
-            // 
-            // inventoryDataGridView
-            // 
-            this.inventoryDataGridView.BackgroundColor = System.Drawing.Color.Cornsilk;
-            this.inventoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inventoryDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.inventoryDataGridView.Location = new System.Drawing.Point(0, 237);
-            this.inventoryDataGridView.Name = "inventoryDataGridView";
-            this.inventoryDataGridView.RowHeadersWidth = 62;
-            this.inventoryDataGridView.RowTemplate.Height = 28;
-            this.inventoryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.inventoryDataGridView.Size = new System.Drawing.Size(978, 449);
-            this.inventoryDataGridView.TabIndex = 28;
-            this.inventoryDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryDataGridView_CellClick);
-            // 
             // bttnGoBack
             // 
             this.bttnGoBack.BackColor = System.Drawing.Color.Goldenrod;
@@ -213,9 +170,59 @@
             this.bttnGoBack.UseVisualStyleBackColor = false;
             this.bttnGoBack.Click += new System.EventHandler(this.bttnGoBack_Click);
             // 
+            // txtPrice
+            // 
+            this.txtPrice.Location = new System.Drawing.Point(652, 17);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(175, 23);
+            this.txtPrice.TabIndex = 21;
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "Home Appliances",
+            "Kitchen Appliances",
+            "Mobile Accessories"});
+            this.cmbCategory.Location = new System.Drawing.Point(652, 82);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(175, 22);
+            this.cmbCategory.TabIndex = 25;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(173, 79);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(176, 23);
+            this.txtQuantity.TabIndex = 23;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(173, 13);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(176, 23);
+            this.txtName.TabIndex = 24;
+            // 
+            // inventoryDataGridView
+            // 
+            this.inventoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.inventoryDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.inventoryDataGridView.BackgroundColor = System.Drawing.Color.Cornsilk;
+            this.inventoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventoryDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.inventoryDataGridView.Location = new System.Drawing.Point(0, 237);
+            this.inventoryDataGridView.Name = "inventoryDataGridView";
+            this.inventoryDataGridView.RowHeadersWidth = 62;
+            this.inventoryDataGridView.RowTemplate.Height = 28;
+            this.inventoryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.inventoryDataGridView.Size = new System.Drawing.Size(978, 449);
+            this.inventoryDataGridView.TabIndex = 28;
+            this.inventoryDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryDataGridView_CellClick);
+            // 
             // admin_inventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(978, 686);

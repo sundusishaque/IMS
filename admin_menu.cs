@@ -124,7 +124,7 @@ namespace IMS
             picFilter.Visible = false;
             picSortName.Visible = false;
 
-            admin.ViewOrdersById(dataGridView);
+            admin.ViewOrdersHistoryById(0, dataGridView);
         }
 
         private void bttnAccount_Click(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace IMS
             {
                 try
                 {
-                    admin.ViewOrderDetailsById(Convert.ToInt32(txtSearch.Text), dataGridView);
+                    admin.ViewOrdersHistoryById(Convert.ToInt32(txtSearch.Text), dataGridView);
                 }
                 catch (Exception ex)
                 {

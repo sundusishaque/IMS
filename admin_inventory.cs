@@ -39,6 +39,7 @@ namespace IMS
             cmbCategory.SelectedItem = null;            
 
             txtName.Focus();
+            admin.ViewInventoryById(0, inventoryDataGridView);
         }
 
         private void inventoryDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -67,6 +68,8 @@ namespace IMS
             cmbCategory.SelectedItem = null;
 
             txtName.Focus();
+            admin.ViewInventoryById(0, inventoryDataGridView);
+
         }
 
         private void bttnDelete_Click(object sender, EventArgs e)
@@ -83,6 +86,7 @@ namespace IMS
             cmbCategory.SelectedItem = null;
 
             txtName.Focus();
+            admin.ViewInventoryById(0, inventoryDataGridView);
         }
 
         private void bttnGoBack_Click(object sender, EventArgs e)
@@ -90,6 +94,11 @@ namespace IMS
             Form goBack = new admin_menu();
             goBack.Show();
             this.Hide();
+        }
+
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

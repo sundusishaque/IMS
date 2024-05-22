@@ -53,6 +53,8 @@ namespace IMS
                 string message = "Your account, ID has been deleted.";
                 MessageBox.Show(message, title);
                 this.Hide();
+                Form goBack = new welcome_form();
+                goBack.Show();
             }
             txtCustPassword.Clear();
 
@@ -72,6 +74,8 @@ namespace IMS
                 string message = "Your Password has been updated.";
                 MessageBox.Show(message, title);
                 this.Hide();
+                Form goBack = new customer_menu();
+                goBack.Show();
             }
 
             txtOldPassword.Clear();

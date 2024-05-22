@@ -31,8 +31,8 @@ namespace IMS
         {
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.pnlOrderId = new System.Windows.Forms.Panel();
-            this.lblOrderId = new System.Windows.Forms.Label();
             this.OrderIdLabel = new System.Windows.Forms.Label();
+            this.lblOrderId = new System.Windows.Forms.Label();
             this.bttnGoBack = new System.Windows.Forms.Button();
             this.bttnPlaceOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
@@ -59,18 +59,7 @@ namespace IMS
             this.pnlOrderId.Name = "pnlOrderId";
             this.pnlOrderId.Size = new System.Drawing.Size(252, 43);
             this.pnlOrderId.TabIndex = 50;
-            // 
-            // lblOrderId
-            // 
-            this.lblOrderId.AutoSize = true;
-            this.lblOrderId.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblOrderId.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderId.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lblOrderId.Location = new System.Drawing.Point(9, 16);
-            this.lblOrderId.Name = "lblOrderId";
-            this.lblOrderId.Size = new System.Drawing.Size(74, 18);
-            this.lblOrderId.TabIndex = 12;
-            this.lblOrderId.Text = "Order Id";
+            this.pnlOrderId.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlOrderId_Paint);
             // 
             // OrderIdLabel
             // 
@@ -83,6 +72,18 @@ namespace IMS
             this.OrderIdLabel.Size = new System.Drawing.Size(40, 18);
             this.OrderIdLabel.TabIndex = 13;
             this.OrderIdLabel.Text = "here";
+            // 
+            // lblOrderId
+            // 
+            this.lblOrderId.AutoSize = true;
+            this.lblOrderId.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblOrderId.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderId.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblOrderId.Location = new System.Drawing.Point(9, 16);
+            this.lblOrderId.Name = "lblOrderId";
+            this.lblOrderId.Size = new System.Drawing.Size(74, 18);
+            this.lblOrderId.TabIndex = 12;
+            this.lblOrderId.Text = "Order Id";
             // 
             // bttnGoBack
             // 

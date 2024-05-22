@@ -41,6 +41,8 @@ namespace IMS
             this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.pnlDataView = new System.Windows.Forms.Panel();
+            this.PnlDetails = new System.Windows.Forms.Panel();
+            this.bttnDetails = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.picSortName = new System.Windows.Forms.PictureBox();
@@ -48,26 +50,24 @@ namespace IMS
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.pnlOrder = new System.Windows.Forms.Panel();
-            this.PnlDetails = new System.Windows.Forms.Panel();
-            this.OrderIdNum = new System.Windows.Forms.NumericUpDown();
-            this.OrderQtyNum = new System.Windows.Forms.NumericUpDown();
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.bttnAddtoCart = new System.Windows.Forms.Button();
             this.bttnViewCart = new System.Windows.Forms.Button();
-            this.bttnDetails = new System.Windows.Forms.Button();
+            this.bttnAddtoCart = new System.Windows.Forms.Button();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.OrderQtyNum = new System.Windows.Forms.NumericUpDown();
+            this.OrderIdNum = new System.Windows.Forms.NumericUpDown();
             this.pnlMenu.SuspendLayout();
             this.pnlFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFilter)).BeginInit();
             this.pnlDataView.SuspendLayout();
+            this.PnlDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSortName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.pnlOrder.SuspendLayout();
-            this.PnlDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderIdNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderQtyNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderIdNum)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -213,8 +213,33 @@ namespace IMS
             this.pnlDataView.Size = new System.Drawing.Size(612, 342);
             this.pnlDataView.TabIndex = 3;
             // 
+            // PnlDetails
+            // 
+            this.PnlDetails.Controls.Add(this.bttnDetails);
+            this.PnlDetails.Location = new System.Drawing.Point(453, 284);
+            this.PnlDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.PnlDetails.Name = "PnlDetails";
+            this.PnlDetails.Size = new System.Drawing.Size(157, 56);
+            this.PnlDetails.TabIndex = 50;
+            // 
+            // bttnDetails
+            // 
+            this.bttnDetails.BackColor = System.Drawing.Color.Goldenrod;
+            this.bttnDetails.Font = new System.Drawing.Font("Baskerville Old Face", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnDetails.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bttnDetails.Location = new System.Drawing.Point(3, 15);
+            this.bttnDetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bttnDetails.Name = "bttnDetails";
+            this.bttnDetails.Size = new System.Drawing.Size(146, 33);
+            this.bttnDetails.TabIndex = 12;
+            this.bttnDetails.Text = "View Details";
+            this.bttnDetails.UseVisualStyleBackColor = false;
+            this.bttnDetails.Click += new System.EventHandler(this.bttnDetails_Click);
+            // 
             // dataGridView
             // 
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.Color.Cornsilk;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(0, 63);
@@ -289,53 +314,19 @@ namespace IMS
             this.pnlOrder.Size = new System.Drawing.Size(372, 104);
             this.pnlOrder.TabIndex = 55;
             // 
-            // PnlDetails
+            // bttnViewCart
             // 
-            this.PnlDetails.Controls.Add(this.bttnDetails);
-            this.PnlDetails.Location = new System.Drawing.Point(453, 284);
-            this.PnlDetails.Margin = new System.Windows.Forms.Padding(2);
-            this.PnlDetails.Name = "PnlDetails";
-            this.PnlDetails.Size = new System.Drawing.Size(157, 56);
-            this.PnlDetails.TabIndex = 50;
-            // 
-            // OrderIdNum
-            // 
-            this.OrderIdNum.Location = new System.Drawing.Point(192, 8);
-            this.OrderIdNum.Name = "OrderIdNum";
-            this.OrderIdNum.Size = new System.Drawing.Size(78, 20);
-            this.OrderIdNum.TabIndex = 5;
-            // 
-            // OrderQtyNum
-            // 
-            this.OrderQtyNum.Location = new System.Drawing.Point(192, 33);
-            this.OrderQtyNum.Name = "OrderQtyNum";
-            this.OrderQtyNum.Size = new System.Drawing.Size(78, 20);
-            this.OrderQtyNum.TabIndex = 6;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblId.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lblId.Location = new System.Drawing.Point(89, 9);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(74, 18);
-            this.lblId.TabIndex = 18;
-            this.lblId.Text = "Enter Id:";
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblQuantity.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lblQuantity.Location = new System.Drawing.Point(92, 35);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(76, 18);
-            this.lblQuantity.TabIndex = 19;
-            this.lblQuantity.Text = "Quantity:";
-            this.lblQuantity.Click += new System.EventHandler(this.lblQuantity_Click);
+            this.bttnViewCart.BackColor = System.Drawing.Color.Goldenrod;
+            this.bttnViewCart.Font = new System.Drawing.Font("Baskerville Old Face", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnViewCart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.bttnViewCart.Location = new System.Drawing.Point(238, 72);
+            this.bttnViewCart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bttnViewCart.Name = "bttnViewCart";
+            this.bttnViewCart.Size = new System.Drawing.Size(130, 25);
+            this.bttnViewCart.TabIndex = 56;
+            this.bttnViewCart.Text = "View Cart";
+            this.bttnViewCart.UseVisualStyleBackColor = false;
+            this.bttnViewCart.Click += new System.EventHandler(this.bttnViewCart_Click);
             // 
             // bttnAddtoCart
             // 
@@ -351,33 +342,44 @@ namespace IMS
             this.bttnAddtoCart.UseVisualStyleBackColor = false;
             this.bttnAddtoCart.Click += new System.EventHandler(this.bttnAddtoCart_Click);
             // 
-            // bttnViewCart
+            // lblQuantity
             // 
-            this.bttnViewCart.BackColor = System.Drawing.Color.Goldenrod;
-            this.bttnViewCart.Font = new System.Drawing.Font("Baskerville Old Face", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnViewCart.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bttnViewCart.Location = new System.Drawing.Point(238, 72);
-            this.bttnViewCart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bttnViewCart.Name = "bttnViewCart";
-            this.bttnViewCart.Size = new System.Drawing.Size(130, 25);
-            this.bttnViewCart.TabIndex = 56;
-            this.bttnViewCart.Text = "View Cart";
-            this.bttnViewCart.UseVisualStyleBackColor = false;
-            this.bttnViewCart.Click += new System.EventHandler(this.bttnViewCart_Click);
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblQuantity.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblQuantity.Location = new System.Drawing.Point(92, 35);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(76, 18);
+            this.lblQuantity.TabIndex = 19;
+            this.lblQuantity.Text = "Quantity:";
+            this.lblQuantity.Click += new System.EventHandler(this.lblQuantity_Click);
             // 
-            // bttnDetails
+            // lblId
             // 
-            this.bttnDetails.BackColor = System.Drawing.Color.Goldenrod;
-            this.bttnDetails.Font = new System.Drawing.Font("Baskerville Old Face", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnDetails.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bttnDetails.Location = new System.Drawing.Point(3, 15);
-            this.bttnDetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.bttnDetails.Name = "bttnDetails";
-            this.bttnDetails.Size = new System.Drawing.Size(146, 33);
-            this.bttnDetails.TabIndex = 12;
-            this.bttnDetails.Text = "View Details";
-            this.bttnDetails.UseVisualStyleBackColor = false;
-            this.bttnDetails.Click += new System.EventHandler(this.bttnDetails_Click);
+            this.lblId.AutoSize = true;
+            this.lblId.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblId.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblId.Location = new System.Drawing.Point(89, 9);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(74, 18);
+            this.lblId.TabIndex = 18;
+            this.lblId.Text = "Enter Id:";
+            // 
+            // OrderQtyNum
+            // 
+            this.OrderQtyNum.Location = new System.Drawing.Point(192, 33);
+            this.OrderQtyNum.Name = "OrderQtyNum";
+            this.OrderQtyNum.Size = new System.Drawing.Size(78, 20);
+            this.OrderQtyNum.TabIndex = 6;
+            // 
+            // OrderIdNum
+            // 
+            this.OrderIdNum.Location = new System.Drawing.Point(192, 8);
+            this.OrderIdNum.Name = "OrderIdNum";
+            this.OrderIdNum.Size = new System.Drawing.Size(78, 20);
+            this.OrderIdNum.TabIndex = 5;
             // 
             // customer_menu
             // 
@@ -398,6 +400,7 @@ namespace IMS
             this.pnlFilter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFilter)).EndInit();
             this.pnlDataView.ResumeLayout(false);
+            this.PnlDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
@@ -405,9 +408,8 @@ namespace IMS
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             this.pnlOrder.ResumeLayout(false);
             this.pnlOrder.PerformLayout();
-            this.PnlDetails.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.OrderIdNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderQtyNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderIdNum)).EndInit();
             this.ResumeLayout(false);
 
         }

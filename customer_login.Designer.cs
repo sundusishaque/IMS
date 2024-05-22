@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(customer_login));
             this.pnlCredentials = new System.Windows.Forms.Panel();
+            this.linkLblRegister = new System.Windows.Forms.LinkLabel();
             this.checkPassword = new System.Windows.Forms.CheckBox();
             this.txtUserPassword = new System.Windows.Forms.TextBox();
             this.txtUserId = new System.Windows.Forms.TextBox();
@@ -38,7 +39,6 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.bttnGoBack = new System.Windows.Forms.Button();
             this.bttnLogin = new System.Windows.Forms.Button();
-            this.linkLblRegister = new System.Windows.Forms.LinkLabel();
             this.pnlCredentials.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,17 @@
             this.pnlCredentials.Size = new System.Drawing.Size(625, 245);
             this.pnlCredentials.TabIndex = 9;
             // 
+            // linkLblRegister
+            // 
+            this.linkLblRegister.AutoSize = true;
+            this.linkLblRegister.Location = new System.Drawing.Point(19, 212);
+            this.linkLblRegister.Name = "linkLblRegister";
+            this.linkLblRegister.Size = new System.Drawing.Size(147, 16);
+            this.linkLblRegister.TabIndex = 12;
+            this.linkLblRegister.TabStop = true;
+            this.linkLblRegister.Text = "Register an account here.";
+            this.linkLblRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblRegister_LinkClicked);
+            // 
             // checkPassword
             // 
             this.checkPassword.AutoSize = true;
@@ -64,7 +75,7 @@
             this.checkPassword.Location = new System.Drawing.Point(406, 170);
             this.checkPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.checkPassword.Name = "checkPassword";
-            this.checkPassword.Size = new System.Drawing.Size(170, 27);
+            this.checkPassword.Size = new System.Drawing.Size(126, 20);
             this.checkPassword.TabIndex = 5;
             this.checkPassword.Text = "Show Password";
             this.checkPassword.UseVisualStyleBackColor = true;
@@ -75,7 +86,7 @@
             this.txtUserPassword.Location = new System.Drawing.Point(252, 112);
             this.txtUserPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtUserPassword.Name = "txtUserPassword";
-            this.txtUserPassword.Size = new System.Drawing.Size(330, 30);
+            this.txtUserPassword.Size = new System.Drawing.Size(330, 23);
             this.txtUserPassword.TabIndex = 4;
             // 
             // txtUserId
@@ -83,7 +94,7 @@
             this.txtUserId.Location = new System.Drawing.Point(252, 37);
             this.txtUserId.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(330, 30);
+            this.txtUserId.Size = new System.Drawing.Size(330, 23);
             this.txtUserId.TabIndex = 3;
             // 
             // lblUserPassword
@@ -94,7 +105,7 @@
             this.lblUserPassword.Location = new System.Drawing.Point(18, 112);
             this.lblUserPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserPassword.Name = "lblUserPassword";
-            this.lblUserPassword.Size = new System.Drawing.Size(179, 27);
+            this.lblUserPassword.Size = new System.Drawing.Size(126, 18);
             this.lblUserPassword.TabIndex = 1;
             this.lblUserPassword.Text = "Enter Password:";
             // 
@@ -106,7 +117,7 @@
             this.lblUserId.Location = new System.Drawing.Point(84, 34);
             this.lblUserId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(113, 27);
+            this.lblUserId.Size = new System.Drawing.Size(78, 18);
             this.lblUserId.TabIndex = 0;
             this.lblUserId.Text = "Enter ID:";
             // 
@@ -154,20 +165,9 @@
             this.bttnLogin.UseVisualStyleBackColor = false;
             this.bttnLogin.Click += new System.EventHandler(this.bttnLogin_Click);
             // 
-            // linkLblRegister
-            // 
-            this.linkLblRegister.AutoSize = true;
-            this.linkLblRegister.Location = new System.Drawing.Point(19, 212);
-            this.linkLblRegister.Name = "linkLblRegister";
-            this.linkLblRegister.Size = new System.Drawing.Size(207, 23);
-            this.linkLblRegister.TabIndex = 12;
-            this.linkLblRegister.TabStop = true;
-            this.linkLblRegister.Text = "Register an account here.";
-            this.linkLblRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblRegister_LinkClicked);
-            // 
             // customer_login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(838, 513);

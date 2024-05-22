@@ -18,8 +18,9 @@ namespace IMS
         {
          
             InitializeComponent();
-            //OrderIdLabel.Text = Convert.ToString(customer;
             BLL_Customer customer = new BLL_Customer();
+            OrderIdLabel.Text = Convert.ToString(customer.getorderId());
+           
             customer.ViewCart(dataGridViewOrders);
         }
 
@@ -35,6 +36,14 @@ namespace IMS
             BLL_Customer customer = new BLL_Customer();
             customer.PlaceOrder();
             this.Hide();
+            Form customerMenu = new customer_menu();
+            customerMenu.Show();
+
+        }
+
+        private void pnlOrderId_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

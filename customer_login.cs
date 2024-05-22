@@ -16,6 +16,7 @@ namespace IMS
         public customer_login()
         {
             InitializeComponent();
+            txtUserPassword.UseSystemPasswordChar = true;
         }
 
         private void bttnGoBack_Click(object sender, EventArgs e)

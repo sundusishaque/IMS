@@ -40,6 +40,7 @@ namespace IMS
             txtSalary.Clear();
 
             txtName.Focus();
+            admin.ViewEmployeeById(0, employeeDataGridView);
         }
 
         private void employeeDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -58,7 +59,7 @@ namespace IMS
         {
             //meaning a row is selected
             if (employeeId > 0)
-                admin.UpdateEmployee(txtName.Text, txtContact.Text, Convert.ToString(cmbPosition.SelectedItem), float.Parse(txtSalary.Text));
+                admin.UpdateEmployee(employeeId,txtName.Text, txtContact.Text, Convert.ToString(cmbPosition.SelectedItem), float.Parse(txtSalary.Text));
             else
                 MessageBox.Show("Select a row of details to update employee information.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -69,6 +70,7 @@ namespace IMS
             txtSalary.Clear();
 
             txtName.Focus();
+            admin.ViewEmployeeById(0, employeeDataGridView);
         }
 
         private void bttnDelete_Click(object sender, EventArgs e)
@@ -86,6 +88,7 @@ namespace IMS
             txtSalary.Clear();
 
             txtName.Focus();
+            admin.ViewEmployeeById(0, employeeDataGridView);
         }
 
         private void bttnGoBack_Click(object sender, EventArgs e)

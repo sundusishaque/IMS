@@ -392,7 +392,213 @@ GO
 
 
 
+CREATE PROCEDURE [dbo].[spCheckCustomerExists] 
+	-- Add the parameters for the stored procedure here
+	@CustomerId INT, 
+	@CustomerPassword VARCHAR(MAX)
+AS
+BEGIN
+	SET NOCOUNT ON;
 
+	DECLARE @CustomerName VARCHAR(50);
+	DECLARE @CustomerStoreId INT;
+
+	-- Check if customer exists in the table of customer
+	IF EXISTS (SELECT 1 FROM [Inventory_Management_System].[dbo].[customer] WHERE id = @CustomerId AND password = @CustomerPassword)
+	BEGIN
+		-- Save name and store's id of admin
+		SELECT @CustomerName = name,@CustomerStoreId = store_id FROM [Inventory_Management_System].[dbo].[customer] WHERE id = @CustomerId;
+		SELECT @CustomerName AS CustomerName, @CustomerStoreId AS StoreID;
+	END
+	-- If customer does not exists, return null
+	ELSE
+		SELECT NULL AS CustomerName, NULL AS StoreID;
+END
+GO
+
+CREATE PROCEDURE [dbo].[spUpdateCustomerPassword] 
+	@CustomerId INT,
+	@oldPassword VARCHAR(MAX),
+	@newPassword VARCHAR(MAX)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	UPDATE customer SET password = @newPassword WHERE id =@CustomerId AND password = @oldPassword;
+END
+GO
+
+
+
+CREATE PROCEDURE [dbo].[spViewOrderDetailsById] 
+	@id INT,
+	@store_id INT,
+	@order_id INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT order_id AS [Order ID #], product_id AS [Product's ID], name AS Name, quantity AS Quantity, price AS Price FROM order_details WHERE order_id=@order_id  AND store_id = @store_id AND customer_id =@id;
+END
+GO
+
+
+CREATE PROCEDURE [dbo].[spAddCustomer] 
+    @Name NVARCHAR(50),
+    @Contact NVARCHAR(50),
+    @Password NVARCHAR(MAX),
+    @StoreId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO customer (name, contact, password, store_id)
+    VALUES (@Name, @Contact, @Password, @StoreId);
+END
+
+CREATE PROCEDURE [dbo].[spGetCustomerIdByNameContactPassword] 
+    @Name NVARCHAR(50),
+    @Contact NVARCHAR(50),
+    @Password NVARCHAR(MAX)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT id
+    FROM customer
+    WHERE name = @Name AND contact = @Contact AND password = @Password;
+END
+
+
+
+CREATE PROCEDURE [dbo]. [spDeleteCustomer]
+    @CustomerId INT,
+    @Password NVARCHAR(100)
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Check if the provided password matches the customer's password
+    IF EXISTS (SELECT 1 FROM customer WHERE id = @CustomerId AND password = @Password)
+    BEGIN
+        -- Delete the customer
+        DELETE FROM customer WHERE id = @CustomerId;
+        SELECT 'Success' AS Status;
+    END
+    ELSE
+    BEGIN
+        -- If the password doesn't match, return an error message
+        SELECT 'Error: Incorrect password' AS Status;
+    END
+END
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE [dbo].[spAddToCart] 
+    @ProductId INT,
+    @ProductName NVARCHAR(100),
+    @ProductQty INT,
+    @Price DECIMAL(18, 2),
+    @OrderId INT,
+    @CustomerId INT,
+    @StoreId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO order_details (product_id, name, quantity, price, order_id, customer_id, store_id)
+    VALUES (@ProductId, @ProductName, @ProductQty, @Price, @OrderId, @CustomerId, @StoreId);
+END
+
+
+CREATE PROCEDURE [dbo].[spCheckOrderIdExists]
+    @OrderId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT COUNT(*) AS OrderCount
+    FROM order_details
+    WHERE order_id = @OrderId;
+END
+
+CREATE PROCEDURE [dbo].[spGetProductDetails] 
+    @ProductId INT,
+    @StoreId INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT name, price
+    FROM inventory
+    WHERE store_id = @StoreId AND id = @ProductId;
+END
+
+
+
+
+CREATE PROCEDURE [dbo]. [spGetTotalQuantity]
+    @OrderId INT,
+    @CustomerId INT
+AS
+BEGIN
+    SELECT SUM(quantity)
+    FROM order_details
+    WHERE order_id = @OrderId AND customer_id = @CustomerId;
+END
+GO
+
+-- Stored procedure to get total price
+CREATE PROCEDURE [dbo].[ spGetTotalPrice]
+    @OrderId INT,
+    @CustomerId INT
+AS
+BEGIN
+    SELECT SUM(price)
+    FROM order_details
+    WHERE order_id = @OrderId AND customer_id = @CustomerId;
+END
+GO
+
+-- Stored procedure to insert an order
+CREATE PROCEDURE [dbo].[spInsertOrder]
+    @OrderId INT,
+    @TotalProducts INT,
+    @Amount FLOAT,
+    @CustomerId INT,
+    @StoreId INT
+AS
+BEGIN
+    INSERT INTO orders(order_id, total_products, amount, customer_id, store_id)
+    VALUES(@OrderId, @TotalProducts, @Amount, @CustomerId, @StoreId);
+END
+GO
+
+
+
+CREATE PROCEDURE [dbo]. [spViewCart]
+    @OrderId INT,
+    @StoreId INT,
+    @CustomerId INT
+AS
+BEGIN
+    SELECT product_id AS [Product's ID], 
+           name AS Name, 
+           quantity AS Quantity, 
+           price AS Price 
+    FROM order_details 
+    WHERE order_id = @OrderId 
+        AND store_id = @StoreId 
+        AND customer_id = @CustomerId;
+END
+GO
 
 
 

@@ -210,39 +210,6 @@ END
 
 
 
---procedures for product class
-
-CREATE PROCEDURE [dbo].[spViewProducts] 
-AS
-BEGIN
-	-- SET NOCOUNT ON added to prevent extra result sets from
-	-- interfering with SELECT statements.
-	SET NOCOUNT ON;
-	SELECT * FROM inventory;
-END
-
-CREATE PROCEDURE [dbo].[spSearchProductByName] 
-	-- Add the parameters for the stored procedure here
-	@name VARCHAR(50),
-	@store_id INT
-AS
-BEGIN
-	SET NOCOUNT ON;
-	SELECT * FROM inventory WHERE store_id = @store_id AND name LIKE '%' +@name+ '%'
-END
-GO
-
-
-
-
-
-
-
-
-
-
-
-
 
 -- Inventory CRUD Operations
 

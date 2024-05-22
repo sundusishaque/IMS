@@ -31,8 +31,8 @@ namespace IMS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(customer_order));
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.picSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.picSearch = new System.Windows.Forms.PictureBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.ViewPanel = new System.Windows.Forms.Panel();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
@@ -53,6 +53,13 @@ namespace IMS
             this.pnlSearch.Size = new System.Drawing.Size(401, 54);
             this.pnlSearch.TabIndex = 1;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(87, 16);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(206, 20);
+            this.txtSearch.TabIndex = 1;
+            // 
             // picSearch
             // 
             this.picSearch.Image = ((System.Drawing.Image)(resources.GetObject("picSearch.Image")));
@@ -62,13 +69,6 @@ namespace IMS
             this.picSearch.TabIndex = 2;
             this.picSearch.TabStop = false;
             this.picSearch.Click += new System.EventHandler(this.picSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(87, 16);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(206, 20);
-            this.txtSearch.TabIndex = 1;
             // 
             // lblSearch
             // 
@@ -109,6 +109,7 @@ namespace IMS
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(944, 580);
             this.Controls.Add(this.ViewPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "customer_order";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order Details";

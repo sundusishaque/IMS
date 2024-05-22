@@ -29,6 +29,7 @@ namespace IMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(customer_account));
             this.bttnUpdate = new System.Windows.Forms.Button();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
@@ -41,9 +42,9 @@ namespace IMS
             this.bttnCustUpdate = new System.Windows.Forms.Button();
             this.PnlUpdateCustomer = new System.Windows.Forms.Panel();
             this.PnlDeleteCustomer = new System.Windows.Forms.Panel();
-            this.txtCustPassword = new System.Windows.Forms.TextBox();
-            this.lblCustPassword = new System.Windows.Forms.Label();
             this.bttDeleteCustomer = new System.Windows.Forms.Button();
+            this.lblCustPassword = new System.Windows.Forms.Label();
+            this.txtCustPassword = new System.Windows.Forms.TextBox();
             this.pnlMenu.SuspendLayout();
             this.PnlUpdateCustomer.SuspendLayout();
             this.PnlDeleteCustomer.SuspendLayout();
@@ -193,25 +194,6 @@ namespace IMS
             this.PnlDeleteCustomer.Size = new System.Drawing.Size(351, 205);
             this.PnlDeleteCustomer.TabIndex = 55;
             // 
-            // txtCustPassword
-            // 
-            this.txtCustPassword.Location = new System.Drawing.Point(145, 74);
-            this.txtCustPassword.Name = "txtCustPassword";
-            this.txtCustPassword.Size = new System.Drawing.Size(179, 20);
-            this.txtCustPassword.TabIndex = 16;
-            // 
-            // lblCustPassword
-            // 
-            this.lblCustPassword.AutoSize = true;
-            this.lblCustPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCustPassword.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustPassword.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.lblCustPassword.Location = new System.Drawing.Point(3, 77);
-            this.lblCustPassword.Name = "lblCustPassword";
-            this.lblCustPassword.Size = new System.Drawing.Size(126, 18);
-            this.lblCustPassword.TabIndex = 17;
-            this.lblCustPassword.Text = "Enter Password:";
-            // 
             // bttDeleteCustomer
             // 
             this.bttDeleteCustomer.BackColor = System.Drawing.Color.Goldenrod;
@@ -226,6 +208,25 @@ namespace IMS
             this.bttDeleteCustomer.UseVisualStyleBackColor = false;
             this.bttDeleteCustomer.Click += new System.EventHandler(this.bttDeleteCustomer_Click);
             // 
+            // lblCustPassword
+            // 
+            this.lblCustPassword.AutoSize = true;
+            this.lblCustPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCustPassword.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPassword.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblCustPassword.Location = new System.Drawing.Point(3, 77);
+            this.lblCustPassword.Name = "lblCustPassword";
+            this.lblCustPassword.Size = new System.Drawing.Size(126, 18);
+            this.lblCustPassword.TabIndex = 17;
+            this.lblCustPassword.Text = "Enter Password:";
+            // 
+            // txtCustPassword
+            // 
+            this.txtCustPassword.Location = new System.Drawing.Point(145, 74);
+            this.txtCustPassword.Name = "txtCustPassword";
+            this.txtCustPassword.Size = new System.Drawing.Size(179, 20);
+            this.txtCustPassword.TabIndex = 16;
+            // 
             // customer_account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +236,7 @@ namespace IMS
             this.Controls.Add(this.PnlDeleteCustomer);
             this.Controls.Add(this.PnlUpdateCustomer);
             this.Controls.Add(this.pnlMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "customer_account";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Account Settings";

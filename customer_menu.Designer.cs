@@ -391,6 +391,7 @@ namespace IMS
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlFilter);
             this.Controls.Add(this.pnlDataView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "customer_menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer\'s Menu of General Store";

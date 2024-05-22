@@ -29,6 +29,7 @@ namespace IMS
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(customer_cart));
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.pnlOrderId = new System.Windows.Forms.Panel();
             this.OrderIdLabel = new System.Windows.Forms.Label();
@@ -123,6 +124,7 @@ namespace IMS
             this.Controls.Add(this.bttnGoBack);
             this.Controls.Add(this.pnlOrderId);
             this.Controls.Add(this.dataGridViewOrders);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "customer_cart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Your Cart";
